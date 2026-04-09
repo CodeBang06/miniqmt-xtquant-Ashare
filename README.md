@@ -46,7 +46,7 @@
 - 和其他行情库（tushare等）比的优点是什么？ -- 简单 轻量 便携 开源  
 - Ashare把复杂的数据获取，拆分，整合逻辑全部封装成一个函数 get_price() 看完下面例子就会了  
 - Ashare可以用在任何需要量化研究，量化分析的场合  
-## 先看一个最简单的例子
+## 先看一个最简单的例子  [Demo1.py](https://github.com/CodeBang06/miniqmt-xtquant-Ashare/blob/main/Demo1.py)
 ```python
 from  Ashare import *
     
@@ -92,6 +92,37 @@ print('贵州茅台60分钟线\n',df)
 2021-06-11 15:00:00  2223.33  2178.81  2226.80  2178.81  12529.00
 ```
 
+### 再看一个配合[MyTT](https://github.com/mpquant/MyTT)的例子 [Demo2.py](https://github.com/CodeBang06/miniqmt-xtquant-Ashare/blob/main/Demo2.py)
+
+```python
+#股市行情数据获取和作图 -2
+from  Ashare import *          #股票数据库    https://github.com/mpquant/Ashare
+from  MyTT import *            #myTT麦语言工具函数指标库  https://github.com/mpquant/MyTT
+    
+# 证券代码兼容多种格式 通达信，同花顺，聚宽
+# sh000001 (000001.XSHG)    sz399006 (399006.XSHE)   sh600519 ( 600519.XSHG ) 
+
+df=get_price('000001.XSHG',frequency='1d',count=120)      #获取今天往前120天的日线实时行情
+print('上证指数日线行情\n',df.tail(5))
+
+#-------有数据了，下面开始正题 -------------
+CLOSE=df.close.values;         OPEN=df.open.values           #基础数据定义，只要传入的是序列都可以 
+HIGH=df.high.values;           LOW=df.low.values             #例如  CLOSE=list(df.close) 都是一样     
+
+MA5=MA(CLOSE,5)                                #获取5日均线序列
+MA10=MA(CLOSE,10)                              #获取10日均线序列
+up,mid,lower=BOLL(CLOSE)                       #获取布林带指标数据
+
+#-------------------------作图显示-----------------------------------------------------------------
+import matplotlib.pyplot as plt ;  from matplotlib.ticker import MultipleLocator
+plt.figure(figsize=(15,8))  
+plt.plot(CLOSE,label='SHZS');    plt.plot(up,label='UP');           #画图显示 
+plt.plot(mid,label='MID');       plt.plot(lower,label='LOW');
+plt.plot(MA10,label='MA10',linewidth=0.5,alpha=0.7);
+plt.show()
+```
+
+<img width="1275" height="689" alt="image" src="https://github.com/user-attachments/assets/47918c39-8680-48fc-a388-abaf4fe62469" />
 
 
 
