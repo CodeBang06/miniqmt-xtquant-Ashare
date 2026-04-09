@@ -92,7 +92,7 @@ print('贵州茅台60分钟线\n',df)
 2021-06-11 15:00:00  2223.33  2178.81  2226.80  2178.81  12529.00
 ```
 
-### 再看一个配合[MyTT](https://github.com/mpquant/MyTT)的例子 [Demo2.py](https://github.com/CodeBang06/miniqmt-xtquant-Ashare/blob/main/Demo2.py)
+### 再看一个配合[MyTT](https://github.com/CodeBang06/miniqmt-xtquant-Ashare/blob/main/MyTT.py)的例子 [Demo2.py](https://github.com/CodeBang06/miniqmt-xtquant-Ashare/blob/main/Demo2.py)
 
 ```python
 #股市行情数据获取和作图 -2
