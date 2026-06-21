@@ -34,7 +34,7 @@
 
 ---------------------------------------------------------------
 ### 团队其他开源项目 - 如果本项目能帮助到您，请右上角帮我们点亮 ★star 以示鼓励！
-* [7种股市最常用的量化软件及视频教程资料合集](https://github.com/CodeBang06/stockquant-suite-tutorial)
+* [股民最常用的7种量化软件工具及视频教程合集](https://github.com/CodeBang06/stockquant-suite-tutorial)
 * [期货期权量化软件集合，视频教程，行情数据，AI大模型自动编写，策略源代码](https://github.com/CodeBang06/Futures-Options-quant-suite-tutorial)
 
 ---------------------------------------------------------------
