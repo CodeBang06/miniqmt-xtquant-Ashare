@@ -14,7 +14,7 @@
 - 券商官方认可，合规安全,不是第三方爬虫、不是模拟接口,是券商级量化通道，实盘稳定、合规.  
 
 #### 2、MiniQMT 和 XtQuant 不是同一个软件，是「底层终端 + 上层 Python 接口库」的依赖关系：
-- MiniQMT 软件： https://download.gjzq.com.cn/temp/organ/gjzqqmt_ceshi.rar
+- MiniQMT 软件： https://pan.baidu.com/s/1CXeocgvQq5TOZ8ElF6ADLQ?pwd=vggh
 - Xtquant API文档：https://dict.thinktrader.net/nativeApi/start_now.html ；  https://dict.thinktrader.net/nativeApi/xtdata.html
 - MiniQMT：是可独立运行的量化交易终端软件（你要打开、登录的那个程序），是底层的「交易通道 + 行情服务器」；是迅投（ThinkTrader）开发的 QMT 量化交易系统的「极简 / 轻量版本」，是一个可独立安装、运行的 Windows 桌面软件，是你量化交易的「底层执行终端」；对接券商，完成真实的股票 / 期货 / 期权报单、撤单、成交、资金 / 持仓管理，是你策略落地实盘的唯一通道；实时接收沪深交易所行情、存储历史 K 线 / Tick 数据，给你的策略提供数据支撑；作为本地服务运行，给 XtQuant 提供 API 交互的底层支持，是 XtQuant 能正常工作的前提。
 - XtQuant：是MiniQMT 衍生出的 Python 库 / 框架，是连接你写的 Python 代码和 MiniQMT 终端的「桥梁」，本身不能独立运行，必须依赖 MiniQMT 客户端；作为 Python 代码和 MiniQMT 终端之间的「桥梁」，把 MiniQMT 的交易、行情能力，封装成 Python 可调用的函数 / 接口，让你用 Python 写量化策略，就能自动调用 MiniQMT 完成交易、获取数据；本身不能独立运行，必须先启动 MiniQMT 客户端、登录账号，XtQuant 才能通过 TCP 连接调用 MiniQMT 的服务；以 Python 库形式存在：安装 MiniQMT 后会自动附带，也可通过pip install xtquant单独安装；所有功能都是 MiniQMT 能力的 Python 封装，没有 MiniQMT 就没有 XtQuant；是你量化策略的「代码入口」，你写的所有 Python 量化代码，都要通过 XtQuant 的接口，才能落地到实盘交易。
